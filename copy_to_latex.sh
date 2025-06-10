@@ -1,0 +1,13 @@
+cp results/figures/PPO_OfficeMedium_Cool_Humid_Buffalo_ppo_0.0_20250518_101701_* ../thuthesis/figures
+cp results/figures/PPO_OfficeMedium_Hot_Dry_Tucson_ppo_0.0_20250518_101557_* ../thuthesis/figures
+cp results/figures/LLM_OfficeMedium_Cool_Humid_Buffalo_qwen-max_20250514_194606_* ../thuthesis/figures
+cp results/figures/LLM_OfficeMedium_Hot_Dry_Tucson_qwen-max_20250517_150136_* ../thuthesis/figures
+cp results/figures/LLM_OfficeSmall_Cool_Humid_Buffalo_qwen-max_20250514_132923_* ../thuthesis/figures
+cp results/figures/LLM_OfficeSmall_Hot_Dry_Tucson_qwen-max_20250420_012207_* ../thuthesis/figures
+cp results/figures/PPO_OfficeSmall_Cool_Humid_Buffalo_ppo_20250514_232318_*  ../thuthesis/figures
+cp results/figures/PPO_OfficeSmall_Hot_Dry_Tucson_ppo_20250517_142209_*  ../thuthesis/figures
+cp results/figures/PPO_OfficeSmall_Hot_Dry_Tucson_ppo_20250517_142209_*  ../thuthesis/figures
+cp results/figures/MPC_OfficeMedium_Cool_Humid_Buffalo_mpc_0.0_20250518_102103_*  ../thuthesis/figures
+cp results/figures/MPC_OfficeMedium_Hot_Dry_Tucson_mpc_0.0_20250518_102050_*  ../thuthesis/figures
+cp results/figures/MPC_OfficeSmall_Cool_Humid_Buffalo_mpc_20250517_161103_*  ../thuthesis/figures
+cp results/figures/MPC_OfficeSmall_Hot_Dry_Tucson_mpc_20250517_161052_*  ../thuthesis/figures

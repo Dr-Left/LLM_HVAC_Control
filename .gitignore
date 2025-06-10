@@ -1,0 +1,88 @@
+
+profile_default
+# IPython
+
+.ipynb_checkpoints
+# Jupyter Notebook
+
+target/
+# PyBuilder
+
+docs/_build/
+# Sphinx documentation
+
+.scrapy
+# Scrapy stuff:
+
+.webassets-cache
+instance/
+# Flask stuff:
+
+db.sqlite3-journal
+db.sqlite3
+local_settings.py
+*.log
+# Django stuff:
+
+*.pot
+*.mo
+# Translations
+
+.hypothesis/
+*.py,cover
+*.cover
+coverage.xml
+nosetests.xml
+.cache
+.coverage.*
+.coverage
+.nox/
+.tox/
+htmlcov/
+# Unit test / coverage reports
+
+pip-delete-this-directory.txt
+pip-log.txt
+# Installer logs
+
+*.spec
+*.manifest
+#  before PyInstaller builds the exe, so as to inject date/other infos into it.
+#  Usually these files are written by a python script from a template
+# PyInstaller
+
+MANIFEST
+*.egg
+.installed.cfg
+*.egg-info/
+share/python-wheels/
+wheels/
+var/
+sdist/
+parts/
+lib64/
+lib/
+.eggs/
+eggs/
+downloads/
+dist/
+develop-eggs/
+build/
+.Python
+# Distribution / packaging
+
+*.so
+# C extensions
+
+*$py.class
+*.py[cod]
+__pycache__/# Byte-compiled / optimized / DLL files
+
+**.zip
+simulator/BEAR/figures/
+simulator/BEAR/models/
+.DS_Store
+results/
+demonstration/
+rewards/
+logs/
