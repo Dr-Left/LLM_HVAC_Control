@@ -1,4 +1,6 @@
-# LLMControl: Facilitating LLM Agent to Control Building HVAC with Zero-shot Prompting
+# LLMControl: Lightweight HVAC Control Framework Utilizing Large Language Model Agents
+
+## 基于大模型智能体的HVAC轻量化控制框架与方法研究
 
 Author: Jingwei Zuo 
 Mail: naohzjw@gmail.com
@@ -6,7 +8,8 @@ Mail: naohzjw@gmail.com
 ## Set up the environment
 
 ```bash
-conda activate thesis
+conda create -yn hvac
+conda activate hvac
 cd BEAR
 pip install -e .
 cd ../
@@ -27,23 +30,23 @@ The environments tested in the thesis: OfficeSmall & OfficeMedium (6 and 18 room
 - `--city`: City location for weather data. E.g., `Tucson`, `Buffalo`.
 - `--max-timestep`: Total number of timesteps to run the simulation (default: 240).
 - `--time-reso`: Time resolution in seconds for each timestep (default: 3600, which is 1 hour).
-- `--noise`: Adds Gaussian noise to the simulation for robustness testing (default: 0.0).
+- `--noise`: Adds Gaussian noise to the temeprature simulation for robustness testing (default: 0.0).
 
 ### LLM (llm.py) Arguments
-- `--model`: LLM model to use for control decisions (default: "deepseek").
+- `--model`: LLM model to use for control decisions (default: "deepseek"). The final thesis uses "qwen-max".
 - `--prompt-style`: Style of prompt to use:
   - `cot_first`: Chain of Thought reasoning and then gives the result.
   - `cot_last`: Gives the result first, followed by Chain of Thought reasoning.
 - `--history-method`: Method to select historical data for prompting:
   - `random`: Randomly selects historical data.
-  - `highest_reward`: Selects historical data with highest rewards (default).
+  - `highest_reward`: Selects historical data with higher rewards (default).
   - `none`: Does not include historical data.
-- `--enable-hindsight`: When set, enables hindsight analysis in the prompts.
+- `--enable-hindsight`: When set, enables hindsight analysis in the prompts (LLM self-reflection).
 
 ### PPO (ppo.py) Arguments
 - `--train-steps`: Number of training steps for the PPO algorithm.
 - `--learning-rate`: Learning rate for the optimizer (default: 3e-4).
-- `--eval`: When set, runs evaluation after training.
+- `--eval`: When set, only do evaluation. Otherwise, do training and evaluation in the same run.
 - Additional PPO-specific parameters (from stable-baselines3):
   (You have to manually set these parameters in the `ppo.py` file)
   - `n_steps`: Number of steps to run for each environment per update.
@@ -57,15 +60,6 @@ The environments tested in the thesis: OfficeSmall & OfficeMedium (6 and 18 room
 
 ### MPC (mpc.py) Arguments
 - `--horizon`: Prediction horizon for MPC algorithm (default: 12 steps).
-
-
-## Plotting
-
-Use `plot.py` to plot the results. 
-
-```bash
-python plot.py -i SIM_ID
-```
 
 ## Notes
 
@@ -105,7 +99,12 @@ The reward function balances temperature comfort and energy consumption:
 
 ### Results
 Simulation results are saved in the `results/` directory with unique IDs. Use the plotting tool to visualize:
+
 ```bash
 python plot.py -i SIM_ID
 ```
+`SIM_ID` is the prefix of the output image. e.g. `LLM_OfficeMedium_Cool_Humid_Buffalo_qwen-max_20250514_125329`.
 This generates visualizations of temperature control performance, energy consumption, and rewards over time.
+
+## Miscellaneous
+Check `structure.md` for the structure of the codebase.
