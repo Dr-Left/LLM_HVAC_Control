@@ -8,7 +8,7 @@ Mail: naohzjw@gmail.com
 ## Set up the environment
 
 ```bash
-conda create -yn hvac
+conda create -yn hvac python=3.9.20
 conda activate hvac
 cd BEAR
 pip install -e .
